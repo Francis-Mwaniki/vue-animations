@@ -28,6 +28,12 @@
       </div>
     </div>
   </nav>
+<div class="flexed">
+  <notification/>
+  <Alerts/>
+  <IndividualAlerts/>
+</div>
+
   <div v-if="phone">
 <Phone/>
 </div>  
@@ -45,14 +51,17 @@
 import Parralax from './components/Parralax.vue';
 import Cloud from './components/Cloud.vue';
 import Phone from './components/Phone.vue';
+import Alerts from './components/Alerts.vue';
+import notification from './components/notification.vue';
+import IndividualAlerts from './components/Individual.alert.vue';
 
   export default {
-    components: { Parralax, Cloud, Phone },
+    components: { Parralax, Cloud, Phone, notification, Alerts, IndividualAlerts },
     data() {
       return {
         parax: false,
         cloud: false,
-        phone: true,
+        phone: false,
       };
     },
 }
@@ -68,6 +77,13 @@ import Phone from './components/Phone.vue';
   font-weight: bold;
 }
 
+.flexed{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 .navbar-toggler {
   border: none;
 }
